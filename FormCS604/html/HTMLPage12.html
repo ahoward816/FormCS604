@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+<link href="../Content/Site.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="../Scripts/DataTables-1.9.4/media/css/jquery.dataTables.css"/>
+</head>
+
+<body style="width: 1085px;">
+
+<!--<div class="container">-->
+<h1>Create a New Proposal</h1>
+<hr />
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addTable">
+    <tr>
+    <th>Cost Center Code: <input id="costCenterCode" type="text" name="costCenterCode"/></th>
+    <th>Resources: <input id="resources" type="text" name="resources"/></th>
+    <th>Task Description: <input id="taskDescription" type="text" name="taskDescription"/></th>
+    <th>Total Base Program: <input id="totalBaseProgram" type="text" name="totalBaseProgram"/></th>
+    <th>Total Options: <input id="totalOptions" type="text" name="totalOptions"/></th>
+    </tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addCostYearTable" style="width: 1085px;">
+    <tr class="thin" style="width: 1085px;">
+    <th>CY13 <input id="CY13" type="text" name="CY13"/></th>
+    <th>CY14 <input id="CY14" type="text" name="CY14"/></th>
+    <th>CY15 <input id="CY15" type="text" name="CY15"/></th>
+    <th>CY16 <input id="CY16" type="text" name="CY16"/></th>
+    <th>CY17 <input id="CY17" type="text" name="CY17"/></th>
+    <th>CY18 <input id="CY18" type="text" name="CY18"/></th>
+    <th>CY19 <input id="CY19" type="text" name="CY19"/></th>
+    <th>CY20 <input id="CY20" type="text" name="CY20"/></th>
+    <th>CY21 <input id="CY21" type="text" name="CY21"/></th>
+    <th>CY22 <input id="CY22" type="text" name="CY22"/></th>
+    <th>CY23 <input id="CY23" type="text" name="CY23"/></th>
+    <th>CY24 <input id="CY24" type="text" name="CY24"/></th>
+    </tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addCostYearTableOption" style="width: 1085px;">
+    <tr class="thin" style="width: 1085px;">
+    <th>Option CY13 <input id="OCY13" type="text" name="OCY13"/></th>
+    <th>Option CY14 <input id="OCY14" type="text" name="OCY14"/></th>
+    <th>Option CY15 <input id="OCY15" type="text" name="OCY15"/></th>
+    <th>Option CY16 <input id="OCY16" type="text" name="OCY16"/></th>
+    <th>Option CY17 <input id="OCY17" type="text" name="OCY17"/></th>
+    <th>Option CY18 <input id="OCY18" type="text" name="OCY18"/></th>
+    <th>Option CY19 <input id="OCY19" type="text" name="OCY19"/></th>
+    <th>Option CY20 <input id="OCY20" type="text" name="OCY20"/></th>
+    <th>Option CY21 <input id="OCY21" type="text" name="OCY21"/></th>
+    <th>Option CY22 <input id="OCY22" type="text" name="OCY22"/></th>
+    <th>Option CY23 <input id="OCY23" type="text" name="OCY23"/></th>
+    <th>Option CY24 <input id="OCY24" type="text" name="OCY24"/></th>
+    </tr>
+</table>
+
+<p align="left"><button id="btnSubmit" value="submit" onclick="fnClickAddRow();">Add new row</button></p>
+
+<p align="left"><button id="Button1" value="submit" onclick="fnClickAddRowToExample();">Get data</button></p>
+
+<!--<p align="left"><button id="Button2" value="submit" onclick="fnClickAddRowCYExample();">CY</button></p>
+-->
+<hr />
+<h3>Proposal Table</h3>
+<hr />
+
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costCenterTable">
+        <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </tfoot>
+      </table>
+
+       <br />
+      <hr />
+      <br />
+
+<h4>Associated CY Table</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYear">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <br />
+      <hr />
+      <br />
+
+<h4>Associated Option CY Table</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYearOption">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Option CY13</th>
+            <th>Option CY14</th>
+            <th>Option CY15</th>
+            <th>Option CY16</th>
+            <th>Option CY17</th>
+            <th>Option CY19</th>
+            <th>Option CY20</th>
+            <th>Option CY21</th>
+            <th>Option CY22</th>
+            <th>Option CY23</th>
+            <th>Option CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>Option CY13</th>
+            <th>Option CY14</th>
+            <th>Option CY15</th>
+            <th>Option CY16</th>
+            <th>Option CY17</th>
+            <th>Option CY19</th>
+            <th>Option CY20</th>
+            <th>Option CY21</th>
+            <th>Option CY22</th>
+            <th>Option CY23</th>
+            <th>Option CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <br />
+      <hr />
+      <br />
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </tfoot>
+      </table>
+
+     
+<!-- </div>-->
+
+ <script type="text/javascript">
+
+     $(document).ready(function () {
+         $('#costCenterTable').dataTable();
+     });
+
+     var costCenterJSON = '{ "costCenterEntries" : [' +
+'{ "costCenterCode":"Supply1" , resources: "Computers" , taskDescription: "Example" ,  totalBaseProgram: "Example" , totalOptions: "Example" },' +
+'{ "costCenterCode":"Supply2" , resources: "Computers" , taskDescription: "Example" ,  totalBaseProgram: "Example" , totalOptions: "Example" },' +
+'{ "costCenterCode":"Supply3" , resources: "Computers" , taskDescription: "Example" ,  totalBaseProgram: "Example" , totalOptions: "Example" } ]}';
+
+     $(document).ready(function () {
+         $('#costYear').dataTable();
+     });
+
+     $(document).ready(function () {
+         $('#costYearOption').dataTable();
+     });
+
+     $(document).ready(function () {
+         $('#example').dataTable();
+     });
+
+     var obj = eval("(" + costCenterJSON + ")");
+     var i = obj.costCenterEntries.length;
+
+     function fnClickAddRow() {
+         $('#costCenterTable').dataTable().fnAddData([
+         $("#costCenterCode").val(),
+         $("#resources").val(),
+         $("#taskDescription").val(),
+         $("#totalBaseProgram").val(),
+         $("#totalOptions").val()]
+     );
+
+         $('#costYear').dataTable().fnAddData([
+          $("#costCenterCode").val(),
+         $("#CY13").val(),
+        $("#CY14").val(),
+         $("#CY15").val(),
+         $("#CY16").val(),
+         $("#CY17").val(),
+        $("#CY18").val(),
+         $("#CY19").val(),
+         $("#CY20").val(),
+         $("#CY21").val(),
+        $("#CY22").val(),
+         $("#CY23").val(),
+         $("#CY24").val()]
+     );
+
+         $('#costYearOption').dataTable().fnAddData([
+          $("#costCenterCode").val(),
+         $("#OCY13").val(),
+        $("#OCY14").val(),
+         $("#OCY15").val(),
+         $("#OCY16").val(),
+         $("#OCY17").val(),
+        $("#OCY18").val(),
+         $("#OCY19").val(),
+         $("#OCY20").val(),
+         $("#OCY21").val(),
+        $("#OCY22").val(),
+         $("#OCY23").val(),
+         $("#OCY24").val()]
+     );
+     }
+
+     function fnClickAddRowToExample() {
+         for (var j = 0; j <= i; j++) {
+             $('#example').dataTable().fnAddData([
+         obj.costCenterEntries[j].costCenterCode,
+         obj.costCenterEntries[j].resources,
+         obj.costCenterEntries[j].taskDescription,
+         obj.costCenterEntries[j].totalBaseProgram,
+         obj.costCenterEntries[j].totalOptions]
+     );
+         }
+     }
+
+   </script>
+
+   </body>
+</html>

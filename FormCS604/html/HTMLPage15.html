@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+<script src="../Scripts/htmlJavascript.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../Scripts/DataTables-1.9.4/media/css/jquery.dataTables.css"/>
+<link href="../Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+<div class="page">
+
+<div id="Tabs">
+<ul>
+<li id="li_tab1" onclick="tab('tab1')" ><a>Tab 1</a></li>
+<li id="li_tab2" onclick="tab('tab2')"><a>Tab 2</a></li>
+</ul>
+<div id="Content_Area">
+<div id="tab1">
+<p>
+
+<div id=”tab2″ style=”display: none;”> <!– We set its display as none because we don’t want to make this
+tab visible by default. The only visible/active tab should be Tab 1 until the visitor clicks on Tab 2. –>
+<p>This is the text for tab 2.</p>
+</div>
+</div> <!– End of Content_Area Div –>
+</div> <!– End of Tabs Div –>
+
+
+<h1>Create a New Proposal</h1>
+<hr />
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addTable>
+    <tr>
+    <th>Cost Center Code: <input id="costCenterCode" type="text" name="costCenterCode"/></th>
+    <th>Resources: <input id="resources" type="text" name="resources"/></th>
+    <th>Task Description: <input id="taskDescription" type="text" name="taskDescription"/></th>
+    </tr>
+</table>
+
+
+<br />
+Escalation: <input id="escalation" type="text" name="escalation"/> Should be as a percentage (ex. 3.50%)
+<br />
+<br />
+
+<div class="container">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addCostYearTable">
+    <tr>
+    <th>CY13 <input id="CY13" type="text" name="CY13"/></th>
+    <th>CY14 <input id="CY14" type="text" name="CY14"/></th>
+    <th>CY15 <input id="CY15" type="text" name="CY15"/></th>
+    <th>CY16 <input id="CY16" type="text" name="CY16"/></th>
+    <th>CY17 <input id="CY17" type="text" name="CY17"/></th>
+    <th>CY18 <input id="CY18" type="text" name="CY18"/></th>
+    <th>CY19 <input id="CY19" type="text" name="CY19"/></th>
+    <th>CY20 <input id="CY20" type="text" name="CY20"/></th>
+    <th>CY21 <input id="CY21" type="text" name="CY21"/></th>
+    <th>CY22 <input id="CY22" type="text" name="CY22"/></th>
+    <th>CY23 <input id="CY23" type="text" name="CY23"/></th>
+    <th>CY24 <input id="CY24" type="text" name="CY24"/></th>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="Table1">
+    <tr>
+    <th>CY13 ($) <input id="CY13M" type="text" name="CY13M"/></th>
+    <th>CY14 ($)<input id="CY14M" type="text" name="CY14M"/></th>
+    <th>CY15 ($)<input id="CY15M" type="text" name="CY15M"/></th>
+    <th>CY16 ($)<input id="CY16M" type="text" name="CY16M"/></th>
+    <th>CY17 ($)<input id="CY17M" type="text" name="CY17M"/></th>
+    <th>CY18 ($)<input id="CY18M" type="text" name="CY18M"/></th>
+    <th>CY19 ($)<input id="CY19M" type="text" name="CY19M"/></th>
+    <th>CY20 ($)<input id="CY20M" type="text" name="CY20M"/></th>
+    <th>CY21 ($)<input id="CY21M" type="text" name="CY21M"/></th>
+    <th>CY22 ($)<input id="CY22M" type="text" name="CY22M"/></th>
+    <th>CY23 ($)<input id="CY23M" type="text" name="CY23M"/></th>
+    <th>CY24 ($)<input id="CY24M" type="text" name="CY24M"/></th>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addCostYearTableOption">
+    <tr>
+    <th>Option CY13 <input id="OCY13" type="text" name="OCY13"/></th>
+    <th>Option CY14 <input id="OCY14" type="text" name="OCY14"/></th>
+    <th>Option CY15 <input id="OCY15" type="text" name="OCY15"/></th>
+    <th>Option CY16 <input id="OCY16" type="text" name="OCY16"/></th>
+    <th>Option CY17 <input id="OCY17" type="text" name="OCY17"/></th>
+    <th>Option CY18 <input id="OCY18" type="text" name="OCY18"/></th>
+    <th>Option CY19 <input id="OCY19" type="text" name="OCY19"/></th>
+    <th>Option CY20 <input id="OCY20" type="text" name="OCY20"/></th>
+    <th>Option CY21 <input id="OCY21" type="text" name="OCY21"/></th>
+    <th>Option CY22 <input id="OCY22" type="text" name="OCY22"/></th>
+    <th>Option CY23 <input id="OCY23" type="text" name="OCY23"/></th>
+    <th>Option CY24 <input id="OCY24" type="text" name="OCY24"/></th>
+    </tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="Table3">
+    <tr>
+    <th>Option CY13 ($) <input id="OCY13M" type="text" name="OCY13M"/></th>
+    <th>Option CY14 ($)<input id="OCY14M" type="text" name="OCY14M"/></th>
+    <th>Option CY15 ($)<input id="OCY15M" type="text" name="OCY15M"/></th>
+    <th>Option CY16 ($)<input id="OCY16M" type="text" name="OCY16M"/></th>
+    <th>Option CY17 ($)<input id="OCY17M" type="text" name="OCY17M"/></th>
+    <th>Option CY18 ($)<input id="OCY18M" type="text" name="OCY18M"/></th>
+    <th>Option CY19 ($)<input id="OCY19M" type="text" name="OCY19M"/></th>
+    <th>Option CY20 ($)<input id="OCY20M" type="text" name="OCY20M"/></th>
+    <th>Option CY21 ($)<input id="OCY21M" type="text" name="OCY21M"/></th>
+    <th>Option CY22 ($)<input id="OCY22M" type="text" name="OCY22M"/></th>
+    <th>Option CY23 ($)<input id="OCY23M" type="text" name="OCY23M"/></th>
+    <th>Option CY24 ($)<input id="OCY24M" type="text" name="OCY24M"/></th>
+    </tr>
+</table>
+</div>
+<p align="left"><button id="btnSubmit" value="submit" onclick="fnClickAddRow();">Add new row</button></p>
+
+<p align="left"><button id="Button1" value="submit" onclick="fnClickAddRowToExample();">Get data</button></p>
+
+Option CY13 <textbox id="txt3" type="text" name="txt3"/>
+
+<hr />
+<h3>Proposal Table</h3>
+<hr />
+
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costCenterTable">
+        <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </tfoot>
+      </table>
+
+       <br />
+      <hr />
+      <br />
+
+<h4>Associated CY Table (Hours)</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYear">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+       <br />
+      <hr />
+      <br />
+
+<h4>Associated CY Table (Money)</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYearMoney">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <br />
+      <hr />
+      <br />
+
+<h4>Associated Option CY Table</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYearOption">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Option CY13</th>
+            <th>Option CY14</th>
+            <th>Option CY15</th>
+            <th>Option CY16</th>
+            <th>Option CY17</th>
+            <th>Option CY19</th>
+            <th>Option CY20</th>
+            <th>Option CY21</th>
+            <th>Option CY22</th>
+            <th>Option CY23</th>
+            <th>Option CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>Option CY13</th>
+            <th>Option CY14</th>
+            <th>Option CY15</th>
+            <th>Option CY16</th>
+            <th>Option CY17</th>
+            <th>Option CY19</th>
+            <th>Option CY20</th>
+            <th>Option CY21</th>
+            <th>Option CY22</th>
+            <th>Option CY23</th>
+            <th>Option CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      
+        <br />
+      <hr />
+      <br />
+
+<h4>Associated Option CY Table (Money)</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYearOptionMoney">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Option CY13 ($)</th>
+            <th>Option CY14 ($)</th>
+            <th>Option CY15 ($)</th>
+            <th>Option CY16 ($)</th>
+            <th>Option CY17 ($)</th>
+            <th>Option CY19 ($)</th>
+            <th>Option CY20 ($)</th>
+            <th>Option CY21 ($)</th>
+            <th>Option CY22 ($)</th>
+            <th>Option CY23 ($)</th>
+            <th>Option CY24 ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>Option CY13 ($)</th>
+            <th>Option CY14 ($)</th>
+            <th>Option CY15 ($)</th>
+            <th>Option CY16 ($)</th>
+            <th>Option CY17 ($)</th>
+            <th>Option CY19 ($)</th>
+            <th>Option CY20 ($)</th>
+            <th>Option CY21 ($)</th>
+            <th>Option CY22 ($)</th>
+            <th>Option CY23 ($)</th>
+            <th>Option CY24 ($)</th>
+          </tr>
+        </tfoot>
+      </table>
+
+
+      <br />
+      <hr />
+      <br />
+</p>
+</div>
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+   </body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#navigation ul a').click(function () {
+            $('#navigation ul a').removeClass('selected');
+            $(this).addClass('selected');
+            $('#content_changer').html('You have selected ' + $(this).html());
+        });
+    });
+</script>

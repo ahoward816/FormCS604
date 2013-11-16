@@ -1,0 +1,683 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8" src="../Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+<!--<script type="text/javascript" src="dataTables.fnGetHiddenNodes.js"></script>-->
+<!--<link href="../Content/Site.css" rel="stylesheet" type="text/css" />-->
+<link rel="stylesheet" type="text/css" href="../Scripts/DataTables-1.9.4/media/css/jquery.dataTables.css"/>
+<!--<link href="../Content/Site.css" rel="stylesheet" type="text/css" />-->
+</head>
+<link href="../Content/Copy%20of%20Site.css" rel="stylesheet" type="text/css" />
+<body style="width: 1085px;">
+
+<div id="Tabs">
+<ul>
+<li id="li_tab1" onclick="tab('tab1')" ><a>Tab 1</a></li>
+<li id="li_tab2" onclick="tab('tab2')"><a>Tab 2</a></li>
+</ul>
+<div id="Content_Area">
+<div id="tab1">
+
+<!--<div class="container">-->
+<h1>Create a New Proposal</h1>
+<hr />
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addTable">
+    <tr>
+    <th>Cost Center Code: <input id="costCenterCode" type="text" name="costCenterCode"/></th>
+    <th>Resources: <input id="resources" type="text" name="resources"/></th>
+    <th>Task Description: <input id="taskDescription" type="text" name="taskDescription"/></th>
+    <!--<th>Total Base Program: <input id="totalBaseProgram" type="text" name="totalBaseProgram"/></th>-->
+    <!--<th>Total Options: <input id="totalOptions" type="text" name="totalOptions"/></th>-->
+    </tr>
+</table>
+
+<br />
+Escalation: <input id="escalation" type="text" name="escalation"/>
+<br />
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addCostYearTable">
+    <tr class="thin">
+    <th>CY13 <input id="CY13" type="text" name="CY13"/></th>
+    <th>CY14 <input id="CY14" type="text" name="CY14"/></th>
+    <th>CY15 <input id="CY15" type="text" name="CY15"/></th>
+    <th>CY16 <input id="CY16" type="text" name="CY16"/></th>
+    <th>CY17 <input id="CY17" type="text" name="CY17"/></th>
+    <th>CY18 <input id="CY18" type="text" name="CY18"/></th>
+    <th>CY19 <input id="CY19" type="text" name="CY19"/></th>
+    <th>CY20 <input id="CY20" type="text" name="CY20"/></th>
+    <th>CY21 <input id="CY21" type="text" name="CY21"/></th>
+    <th>CY22 <input id="CY22" type="text" name="CY22"/></th>
+    <th>CY23 <input id="CY23" type="text" name="CY23"/></th>
+    <th>CY24 <input id="CY24" type="text" name="CY24"/></th>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="Table1">
+    <tr class="thin">
+    <th>CY13 ($) <input id="CY13M" type="text" name="CY13M"/></th>
+    <th>CY14 ($)<input id="CY14M" type="text" name="CY14M"/></th>
+    <th>CY15 ($)<input id="CY15M" type="text" name="CY15M"/></th>
+    <th>CY16 ($)<input id="CY16M" type="text" name="CY16M"/></th>
+    <th>CY17 ($)<input id="CY17M" type="text" name="CY17M"/></th>
+    <th>CY18 ($)<input id="CY18M" type="text" name="CY18M"/></th>
+    <th>CY19 ($)<input id="CY19M" type="text" name="CY19M"/></th>
+    <th>CY20 ($)<input id="CY20M" type="text" name="CY20M"/></th>
+    <th>CY21 ($)<input id="CY21M" type="text" name="CY21M"/></th>
+    <th>CY22 ($)<input id="CY22M" type="text" name="CY22M"/></th>
+    <th>CY23 ($)<input id="CY23M" type="text" name="CY23M"/></th>
+    <th>CY24 ($)<input id="CY24M" type="text" name="CY24M"/></th>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="addCostYearTableOption">
+    <tr class="thin">
+    <th>Option CY13 <input id="OCY13" type="text" name="OCY13"/></th>
+    <th>Option CY14 <input id="OCY14" type="text" name="OCY14"/></th>
+    <th>Option CY15 <input id="OCY15" type="text" name="OCY15"/></th>
+    <th>Option CY16 <input id="OCY16" type="text" name="OCY16"/></th>
+    <th>Option CY17 <input id="OCY17" type="text" name="OCY17"/></th>
+    <th>Option CY18 <input id="OCY18" type="text" name="OCY18"/></th>
+    <th>Option CY19 <input id="OCY19" type="text" name="OCY19"/></th>
+    <th>Option CY20 <input id="OCY20" type="text" name="OCY20"/></th>
+    <th>Option CY21 <input id="OCY21" type="text" name="OCY21"/></th>
+    <th>Option CY22 <input id="OCY22" type="text" name="OCY22"/></th>
+    <th>Option CY23 <input id="OCY23" type="text" name="OCY23"/></th>
+    <th>Option CY24 <input id="OCY24" type="text" name="OCY24"/></th>
+    </tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="Table3">
+    <tr class="thin">
+    <th>Option CY13 ($) <input id="OCY13M" type="text" name="OCY13M"/></th>
+    <th>Option CY14 ($)<input id="OCY14M" type="text" name="OCY14M"/></th>
+    <th>Option CY15 ($)<input id="OCY15M" type="text" name="OCY15M"/></th>
+    <th>Option CY16 ($)<input id="OCY16M" type="text" name="OCY16M"/></th>
+    <th>Option CY17 ($)<input id="OCY17M" type="text" name="OCY17M"/></th>
+    <th>Option CY18 ($)<input id="OCY18M" type="text" name="OCY18M"/></th>
+    <th>Option CY19 ($)<input id="OCY19M" type="text" name="OCY19M"/></th>
+    <th>Option CY20 ($)<input id="OCY20M" type="text" name="OCY20M"/></th>
+    <th>Option CY21 ($)<input id="OCY21M" type="text" name="OCY21M"/></th>
+    <th>Option CY22 ($)<input id="OCY22M" type="text" name="OCY22M"/></th>
+    <th>Option CY23 ($)<input id="OCY23M" type="text" name="OCY23M"/></th>
+    <th>Option CY24 ($)<input id="OCY24M" type="text" name="OCY24M"/></th>
+    </tr>
+</table>
+<p align="left"><button id="btnSubmit" value="submit" onclick="fnClickAddRow();">Add new row</button></p>
+
+<p align="left"><button id="Button1" value="submit" onclick="fnClickAddRowToExample();">Get data</button></p>
+
+Option CY13 <textbox id="txt3" type="text" name="txt3"/>
+<!--<p align="left"><button id="Button2" value="submit" onclick="fnClickAddRowCYExample();">CY</button></p>
+-->
+<hr />
+<h3>Proposal Table</h3>
+<hr />
+
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costCenterTable">
+        <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </tfoot>
+      </table>
+
+       <br />
+      <hr />
+      <br />
+
+<h4>Associated CY Table (Hours)</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYear">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+       <br />
+      <hr />
+      <br />
+
+<h4>Associated CY Table (Money)</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYearMoney">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>CY13</th>
+            <th>CY14</th>
+            <th>CY15</th>
+            <th>CY16</th>
+            <th>CY17</th>
+            <th>CY19</th>
+            <th>CY20</th>
+            <th>CY21</th>
+            <th>CY22</th>
+            <th>CY23</th>
+            <th>CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <br />
+      <hr />
+      <br />
+
+<h4>Associated Option CY Table</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYearOption">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Option CY13</th>
+            <th>Option CY14</th>
+            <th>Option CY15</th>
+            <th>Option CY16</th>
+            <th>Option CY17</th>
+            <th>Option CY19</th>
+            <th>Option CY20</th>
+            <th>Option CY21</th>
+            <th>Option CY22</th>
+            <th>Option CY23</th>
+            <th>Option CY24</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>Option CY13</th>
+            <th>Option CY14</th>
+            <th>Option CY15</th>
+            <th>Option CY16</th>
+            <th>Option CY17</th>
+            <th>Option CY19</th>
+            <th>Option CY20</th>
+            <th>Option CY21</th>
+            <th>Option CY22</th>
+            <th>Option CY23</th>
+            <th>Option CY24</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      
+        <br />
+      <hr />
+      <br />
+
+<h4>Associated Option CY Table (Money)</h4>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="costYearOptionMoney">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Option CY13 ($)</th>
+            <th>Option CY14 ($)</th>
+            <th>Option CY15 ($)</th>
+            <th>Option CY16 ($)</th>
+            <th>Option CY17 ($)</th>
+            <th>Option CY19 ($)</th>
+            <th>Option CY20 ($)</th>
+            <th>Option CY21 ($)</th>
+            <th>Option CY22 ($)</th>
+            <th>Option CY23 ($)</th>
+            <th>Option CY24 ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+           <tr>
+           <th>Cost Center Code</th>
+           <th>Option CY13 ($)</th>
+            <th>Option CY14 ($)</th>
+            <th>Option CY15 ($)</th>
+            <th>Option CY16 ($)</th>
+            <th>Option CY17 ($)</th>
+            <th>Option CY19 ($)</th>
+            <th>Option CY20 ($)</th>
+            <th>Option CY21 ($)</th>
+            <th>Option CY22 ($)</th>
+            <th>Option CY23 ($)</th>
+            <th>Option CY24 ($)</th>
+          </tr>
+        </tfoot>
+      </table>
+
+
+      <br />
+      <hr />
+      <br />
+</div>
+
+<div id="tab2" style="display: none;"> 
+
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+         <thead>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Cost Center Code</th>
+            <th>Resources</th>
+            <th>Task Description</th>
+            <th>Total Base Program</th>
+            <th>Total Options</th>
+          </tr>
+        </tfoot>
+      </table>
+
+  </div>
+</div> 
+</div>   
+<!-- </div>-->
+
+ <script type="text/javascript">
+
+ function tab(tab) {
+document.getElementById('tab1').style.display = 'none';
+document.getElementById('tab2').style.display = 'none';
+document.getElementById('li_tab1').setAttribute("class", "");
+document.getElementById('li_tab2').setAttribute("class", "");
+document.getElementById('tab').style.display = 'block';
+document.getElementById('li_'+tab).setAttribute("class", "active");
+}
+
+
+     $(document).ready(function () {
+         $('#costCenterTable').dataTable();
+     });
+
+     var costCenterJSON = '{ "costCenterEntries" : [' +
+'{ "costCenterCode":"Supply1" , resources: "Computers" , taskDescription: "Example" ,  totalBaseProgram: "Example" , totalOptions: "Example" },' +
+'{ "costCenterCode":"Supply2" , resources: "Computers" , taskDescription: "Example" ,  totalBaseProgram: "Example" , totalOptions: "Example" },' +
+'{ "costCenterCode":"Supply3" , resources: "Computers" , taskDescription: "Example" ,  totalBaseProgram: "Example" , totalOptions: "Example" } ]}';
+
+     $(document).ready(function () {
+         $('#costYear').dataTable();
+     });
+
+     $(document).ready(function () {
+         $('#costYearMoney').dataTable();
+     });
+
+     $(document).ready(function () {
+         $('#costYearOption').dataTable();
+     });
+
+     $(document).ready(function () {
+         $('#costYearOptionMoney').dataTable();
+     });
+
+     $(document).ready(function () {
+         $('#example').dataTable();
+     });
+
+     var obj = eval("(" + costCenterJSON + ")");
+     var i = obj.costCenterEntries.length;
+
+//     function fnClickAddRow() {
+//         $('#costCenterTable').dataTable().fnAddData([
+//         $("#costCenterCode").val(),
+//         $("#resources").val(),
+//         $("#taskDescription").val(),
+//         $("#totalBaseProgram").val(),
+//         $("#totalOptions").val()]
+//     );
+
+     function fnClickAddRow() {
+
+         var cy13 = document.getElementById('CY13').value;
+         var cy14 = document.getElementById('CY14').value;
+         var cy15 = document.getElementById('CY15').value;
+         var cy16 = document.getElementById('CY16').value;
+         var cy17 = document.getElementById('CY17').value;
+         var cy18 = document.getElementById('CY18').value;
+         var cy19 = document.getElementById('CY19').value;
+         var cy20 = document.getElementById('CY20').value;
+         var cy21 = document.getElementById('CY21').value;
+         var cy22 = document.getElementById('CY22').value;
+         var cy23 = document.getElementById('CY23').value;
+         var cy24 = document.getElementById('CY23').value;
+         var cy13m = document.getElementById('CY13M').value;
+         var cy14m = document.getElementById('CY14M').value;
+         var cy15m = document.getElementById('CY15M').value;
+         var cy16m = document.getElementById('CY16M').value;
+         var cy17m = document.getElementById('CY17M').value;
+         var cy18m = document.getElementById('CY18M').value;
+         var cy19m = document.getElementById('CY19M').value;
+         var cy20m = document.getElementById('CY20M').value;
+         var cy21m = document.getElementById('CY21M').value;
+         var cy22m = document.getElementById('CY22M').value;
+         var cy23m = document.getElementById('CY23M').value;
+         var cy24m = document.getElementById('CY24M').value;
+         var cyEscalation = document.getElementById('escalation').value;
+         var cymResult;
+
+        var ocy13 = document.getElementById('OCY13').value;
+        var ocy14 = document.getElementById('OCY14').value;
+        var ocy15 = document.getElementById('OCY15').value;
+        var ocy16 = document.getElementById('OCY16').value;
+        var ocy17 = document.getElementById('OCY17').value;
+        var ocy18 = document.getElementById('OCY18').value;
+        var ocy19 = document.getElementById('OCY19').value;
+        var ocy20 = document.getElementById('OCY20').value;
+        var ocy21 = document.getElementById('OCY21').value;
+        var ocy22 = document.getElementById('OCY22').value;
+        var ocy23 = document.getElementById('OCY23').value;
+        var ocy24 = document.getElementById('OCY23').value;
+        var ocy13m = document.getElementById('OCY13M').value;
+        var ocy14m = document.getElementById('OCY14M').value;
+        var ocy15m = document.getElementById('OCY15M').value;
+        var ocy16m = document.getElementById('OCY16M').value;
+        var ocy17m = document.getElementById('OCY17M').value;
+        var ocy18m = document.getElementById('OCY18M').value;
+        var ocy19m = document.getElementById('OCY19M').value;
+        var ocy20m = document.getElementById('OCY20M').value;
+        var ocy21m = document.getElementById('OCY21M').value;
+        var ocy22m = document.getElementById('OCY22M').value;
+        var ocy23m = document.getElementById('OCY23M').value;
+        var ocy24m = document.getElementById('OCY24M').value;
+        var ocymResult;
+        var ocyResult;
+
+
+         if (cy13 == "")
+             cy13 = 0;
+         if (cy14 == "")
+             cy14 = 0;
+         if (cy15 == "")
+             cy15 = 0;
+         if (cy16 == "")
+             cy16 = 0;
+         if (cy17 == "")
+             cy17 = 0;
+         if (cy18 == "")
+             cy18 = 0;
+         if (cy19 == "")
+             cy19 = 0;
+         if (cy20 == "")
+             cy20 = 0;
+         if (cy21 == "")
+             cy21 = 0;
+         if (cy22 == "")
+             cy22 = 0;
+         if (cy23 == "")
+             cy23 = 0;
+         if (cy24 == "")
+             cy24 = 0;
+
+         if (cy13m == "")
+             cy13m = 0;
+         if (cy14m == "")
+             cy14m = 0;
+         if (cy15m == "")
+             cy15m = 0;
+         if (cy16m == "")
+             cy16m = 0;
+         if (cy17m == "")
+             cy17m = 0;
+         if (cy18m == "")
+             cy18m = 0;
+         if (cy19m == "")
+             cy19m = 0;
+         if (cy20m == "")
+             cy20m = 0;
+         if (cy21m == "")
+             cy21m = 0;
+         if (cy22m == "")
+             cy22m = 0;
+         if (cy23m == "")
+             cy23m = 0;
+         if (cy24m == "")
+             cy24m = 0;
+
+
+                if (ocy13 == "")
+                    ocy13 = 0;
+                if (ocy14 == "")
+                    ocy14 = 0;
+                if (ocy15 == "")
+                    ocy15 = 0;
+                if (ocy16 == "")
+                    ocy16 = 0;
+                if (ocy17 == "")
+                    ocy17 = 0;
+                if (ocy18 == "")
+                    ocy18 = 0;
+                if (ocy19 == "")
+                    ocy19 = 0;
+                if (ocy20 == "")
+                    ocy20 = 0;
+                if (ocy21 == "")
+                    ocy21 = 0;
+                if (ocy22 == "")
+                    ocy22 = 0;
+                if (ocy23 == "")
+                    ocy23 = 0;
+                if (ocy24 == "")
+                    ocy24 = 0;
+
+                if (ocy13m == "")
+                    ocy13m = 0;
+                if (ocy14m == "")
+                    ocy14m = 0;
+                if (ocy15m == "")
+                    ocy15m = 0;
+                if (ocy16m == "")
+                    ocy16m = 0;
+                if (ocy17m == "")
+                    ocy17m = 0;
+                if (ocy18m == "")
+                    ocy18m = 0;
+                if (ocy19m == "")
+                    ocy19m = 0;
+                if (ocy20m == "")
+                    ocy20m = 0;
+                if (ocy21m == "")
+                    ocy21m = 0;
+                if (ocy22m == "")
+                    ocy22m = 0;
+                if (ocy23m == "")
+                    ocy23m = 0;
+                if (ocy24m == "")
+                    ocy24m = 0;
+
+
+         var escalationFactors = new Array();
+         for (i = 0; i < 12; i++) {
+             escalationFactors[i] = 1 + (i * (cyEscalation / 100));
+         }
+
+        var result2 = parseInt(cy13m) + (parseInt(cy14m) * escalationFactors[1]) + (parseInt(cy15m) * escalationFactors[2]) + (parseInt(cy16m) * escalationFactors[3]) + (parseInt(cy17m) * escalationFactors[4]) + (parseInt(cy18m) * escalationFactors[5]) + (parseInt(cy19m) * escalationFactors[6]) + (parseInt(cy20m) * escalationFactors[7]) + (parseInt(cy21m) * escalationFactors[8]) + (parseInt(cy22m) * escalationFactors[9]) + (parseInt(cy23m) * escalationFactors[10]) + (parseInt(cy24m) * escalationFactors[11]);
+        var result = parseInt(cy13) + parseInt(cy14) + parseInt(cy15) + parseInt(cy16) + parseInt(cy17) + parseInt(cy18) + parseInt(cy19) + parseInt(cy20) + parseInt(cy21) + parseInt(cy22) + parseInt(cy23) + parseInt(cy24);
+        var result3 = parseInt(ocy13) + parseInt(ocy14) + parseInt(ocy15) + parseInt(ocy16) + parseInt(ocy17) + parseInt(ocy18) + parseInt(ocy19) + parseInt(ocy20) + parseInt(ocy21) + parseInt(ocy22) + parseInt(ocy23) + parseInt(ocy24);
+        var result4 = parseInt(ocy13m) + (parseInt(ocy14m) * escalationFactors[1]) + (parseInt(ocy15m) * escalationFactors[2]) + (parseInt(ocy16m) * escalationFactors[3]) + (parseInt(ocy17m) * escalationFactors[4]) + (parseInt(ocy18m) * escalationFactors[5]) + (parseInt(ocy19m) * escalationFactors[6]) + (parseInt(ocy20m) * escalationFactors[7]) + (parseInt(ocy21m) * escalationFactors[8]) + (parseInt(ocy22m) * escalationFactors[9]) + (parseInt(ocy23m) * escalationFactors[10]) + (parseInt(ocy24m) * escalationFactors[11]);
+      
+         cyResult = result;
+
+         cymResult = result2;
+
+         ocyResult = result3;
+         ocymResult = result4;
+
+         if (!isNaN(result)) {
+             document.getElementById('txt3').value = result;
+         }
+
+         var cyResultString = "CY Hours: " + cyResult + " | CY Dollars: " + cymResult;
+         var ocyResultString = "CY Hours: " + ocyResult + " | CY Dollars: " + ocymResult;
+
+         $('#costCenterTable').dataTable().fnAddData([
+         $("#costCenterCode").val(),
+         $("#resources").val(),
+         $("#taskDescription").val(),
+         cyResultString,
+         ocyResultString]
+     );
+
+         $('#costYear').dataTable().fnAddData([
+          $("#costCenterCode").val(),
+         $("#CY13").val(),
+        $("#CY14").val(),
+         $("#CY15").val(),
+         $("#CY16").val(),
+         $("#CY17").val(),
+        $("#CY18").val(),
+         $("#CY19").val(),
+         $("#CY20").val(),
+         $("#CY21").val(),
+        $("#CY22").val(),
+         $("#CY23").val(),
+         $("#CY24").val()]
+     );
+
+
+         $('#costYearMoney').dataTable().fnAddData([
+          $("#costCenterCode").val(),
+         $("#CY13M").val(),
+        $("#CY14M").val(),
+         $("#CY15M").val(),
+         $("#CY16M").val(),
+         $("#CY17M").val(),
+        $("#CY18M").val(),
+         $("#CY19M").val(),
+         $("#CY20M").val(),
+         $("#CY21M").val(),
+        $("#CY22M").val(),
+         $("#CY23M").val(),
+         $("#CY24M").val()]
+     );
+
+         $('#costYearOptionMoney').dataTable().fnAddData([
+          $("#costCenterCode").val(),
+         $("#OCY13M").val(),
+        $("#OCY14M").val(),
+         $("#OCY15M").val(),
+         $("#OCY16M").val(),
+         $("#OCY17M").val(),
+        $("#OCY18M").val(),
+         $("#OCY19M").val(),
+         $("#OCY20M").val(),
+         $("#OCY21M").val(),
+        $("#OCY22M").val(),
+         $("#OCY23M").val(),
+         $("#OCY24M").val()]
+     );
+
+         $('#costYearOption').dataTable().fnAddData([
+          $("#costCenterCode").val(),
+         $("#OCY13").val(),
+        $("#OCY14").val(),
+         $("#OCY15").val(),
+         $("#OCY16").val(),
+         $("#OCY17").val(),
+        $("#OCY18").val(),
+         $("#OCY19").val(),
+         $("#OCY20").val(),
+         $("#OCY21").val(),
+        $("#OCY22").val(),
+         $("#OCY23").val(),
+         $("#OCY24").val()]
+     );
+     }
+
+     function fnClickAddRowToExample() {
+         for (var j = 0; j <= i; j++) {
+             $('#example').dataTable().fnAddData([
+         obj.costCenterEntries[j].costCenterCode,
+         obj.costCenterEntries[j].resources,
+         obj.costCenterEntries[j].taskDescription,
+         obj.costCenterEntries[j].totalBaseProgram,
+         obj.costCenterEntries[j].totalOptions]
+     );
+         }
+     }
+   </script>
+
+   </body>
+</html>

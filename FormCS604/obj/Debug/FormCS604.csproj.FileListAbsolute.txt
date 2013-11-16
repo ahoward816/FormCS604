@@ -1,0 +1,7 @@
+c:\users\ahoward816\documents\visual studio 2010\Projects\FormCS604\FormCS604\bin\FormCS604.dll
+c:\users\ahoward816\documents\visual studio 2010\Projects\FormCS604\FormCS604\bin\FormCS604.pdb
+c:\users\ahoward816\documents\visual studio 2010\Projects\FormCS604\FormCS604\bin\EntityFramework.dll
+c:\users\ahoward816\documents\visual studio 2010\Projects\FormCS604\FormCS604\bin\EntityFramework.xml
+c:\users\ahoward816\documents\visual studio 2010\Projects\FormCS604\FormCS604\obj\Debug\FormCS604.dll
+c:\users\ahoward816\documents\visual studio 2010\Projects\FormCS604\FormCS604\obj\Debug\FormCS604.pdb
+C:\Users\ahoward816\documents\visual studio 2010\Projects\FormCS604\FormCS604\obj\Debug\FormCS604.csprojResolveAssemblyReference.cache
